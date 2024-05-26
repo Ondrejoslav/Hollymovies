@@ -17,6 +17,7 @@ class Genre(Model):
 
 
 class Movie(Model):
+    objects = None
     title = CharField(max_length=185, null=False, blank=False)
     genre = ForeignKey(Genre, on_delete=DO_NOTHING)
     rating = IntegerField(null=True, blank=True)
