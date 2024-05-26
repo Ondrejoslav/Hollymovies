@@ -6,6 +6,9 @@ from django.db.models import Model, CharField, ForeignKey, DO_NOTHING, IntegerFi
 class Genre(Model):
     name = CharField(max_length=100, null=False, blank=False)
 
+    class Meta:
+        ordering = ['name']
+
     def __repr__(self):
         return f'<Genre: {self.name}>'
 
@@ -21,6 +24,8 @@ class Movie(Model):
     description = TextField(null=True, blank=True)
     created = DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['title']
 
     def __repr__(self):
         return f'<Movie: {self.title}>'
