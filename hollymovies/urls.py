@@ -28,4 +28,5 @@ urlpatterns = [
 
     path('', home, name='home'),
     path('list_of_movies/', movies, name = 'movies'),
+    path('movie/<pk>/', movie, name = 'movie'),
 ]

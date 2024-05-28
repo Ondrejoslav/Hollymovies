@@ -32,3 +32,10 @@ def movies(request):
     movies = Movie.objects.all()
     context = {'movies': movies}
     return render(request, template_name='movies.html', context=context)
+
+def movie(request, pk):
+    if Movie.objects.filter(id=pk).exists():
+        movie = Movie.objects.get(id=pk)
+        context = {'movie': movie}
+        return render(request, 'movie.html', context)
+    return movies(request)
